@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #333; /* Dark gray for primary elements */
+    --secondary-color: #555; /* Slightly lighter gray for secondary elements */
+    --background-color: #f0f0f0; /* Light gray background */
+    --text-color: #333; /* Dark gray text */
+    --white-color: #fff; /* White */
+    --header-padding: 20px;
+    --input-padding: 10px;
+    --button-padding: 10px 20px;
+    --forecast-padding: 20px;
+    --border-radius: 5px; /* Rounded corners */
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    --transition-time: 0.3s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: var(--header-padding);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+#cityForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#cityInput {
+    padding: var(--input-padding);
+    font-size: 1em;
+    width: 300px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+#cityInput:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+button[type="submit"] {
+    padding: var(--button-padding);
+    font-size: 1em;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-time) ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #444; /* Darker secondary color */
+}
+
+button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color); /* Focus outline */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.forecast-title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#hourly-forecast-container {
+    width: 100%;
+    overflow: hidden;
+    font-size: 13px;
+
+}
+
+.forecast-scroll {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.hourly-forecast, .daily-forecast {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+    padding: var(--forecast-padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.hourly-forecast {
+    width: 100px;
+    margin-right: 20px;
+}
+
+.daily-forecast {
+    width: 250px;
+}
+
+.hourly-forecast p, .daily-forecast p {
+    margin: 5px 0;
+}
+
+img {
+    width: 120px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    #cityInput {
+        width: 100%;
+    }
+
+.hourly-forecast, .daily-forecast {
+        width: calc(100% - 40px);
+        margin-right: 0;
+    }
+}
